@@ -65,3 +65,21 @@ gcloud app deploy
 gcloud app browse
 npm start
 git add .
+git commit -am "Hello World"
+git push
+git config --global credential.helper store
+git pull
+gcloud app deploy
+node index.js
+gcloud app deploy
+gcloud app browse
+gcloud app logs tail -s default
+gcloud app deploy
+gcloud app logs tail -s default
+node srv server.js
+ls
+pwd
+rm srv
+npm start
+gcloud app deploy
+git add .
