@@ -24,6 +24,8 @@ Array.prototype.mean = function() {
   mean = total / this.length;
   return mean;
 };
+
+
 // Themes begin
 am4core.useTheme(am4themes_dark);
 am4core.useTheme(am4themes_animated);
@@ -87,7 +89,7 @@ series1.dataFields.valueY = "calories";
 series1.dataFields.dateX = "date";
 series1.yAxis = valueAxis1;
 series1.name = "Calories";
-series1.tooltipText = "{name}\n[bold font-size: 20]{valueY} cals[/]";
+series1.tooltipText = "{name}\n[bold font-size: 10]{valueY} cals[/]";
 series1.fill = chart.colors.getIndex(0);
 series1.strokeWidth = 1;
 series1.clustered = false;
@@ -100,7 +102,7 @@ series1.sequencedInterpolation = true;
  series2.dataFields.dateX = "date";
  series2.yAxis = valueAxis2;
  series2.name = "Water oz";
- series2.tooltipText = "{name}\n[bold font-size: 20] {valueY} oz[/]";
+ series2.tooltipText = "{name}\n[bold font-size: 10] {valueY} oz[/]";
  series2.fill = chart.colors.getIndex(0).lighten(0.5);
  series2.strokeWidth = 0;
  series2.clustered = false;
@@ -121,7 +123,7 @@ series1.sequencedInterpolation = true;
  series3.fillOpacity = 0.3;
  series3.tensionX = 0.7;
  series3.yAxis = valueAxis4;
- series3.tooltipText = "{name}\n[bold font-size: 20]{valueY}[/]";
+ series3.tooltipText = "{name}\n[bold font-size: 10]{valueY}[/]";
 
  var bullet3 = series3.bullets.push(new am4charts.CircleBullet());
  bullet3.circle.radius = 3;
@@ -135,7 +137,7 @@ series1.sequencedInterpolation = true;
  series4.strokeWidth = 2;
  series4.tensionX = 0.7;
  series4.yAxis = valueAxis3;
- series4.tooltipText = "{name}\n[bold font-size: 20]{valueY} lbs.[/]";
+ series4.tooltipText = "{name}\n[bold font-size: 10]{valueY} lbs.[/]";
  series4.stroke = chart.colors.getIndex(0).lighten(0.5);
  series4.strokeDasharray = "3,3";
 

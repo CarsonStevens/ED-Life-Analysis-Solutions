@@ -14,13 +14,59 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+html {
+  height: 100%;
 }
 
-body { background-color: #30303d; color: #fff; }
-#chartdiv {
-  width: 100%;
-  height: 500px;
+svg {
+  display: inline-block;
+  height: 1.5rem;
 }
- 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #30303d;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+#chartdiv {
+  grid-area: chart;
+  width: 100%;
+  height: 100%;
+}
+
+.tab {
+  width: 90%;
+  height: 1.5rem;
+}
+
+
+nav {
+  grid-area: nav;
+  display: flex;
+  flex-direction: row;
+  z-index: 10000;
+}
+
+#account {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0);
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  grid: [row1-start] ". . . . . ." 0.05fr [row1-end]
+        [row2-start] ". nav nav nav nav ." 0.1fr [row2-end]
+        [row3-start] ". chart chart chart . ." 1fr [row3-end]
+        [row4-start] ". . . . . ." 1fr [row4-end]
+        [row5-start] ". . . . . ." 0.05fr [row5-end]
+        / 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
+}
