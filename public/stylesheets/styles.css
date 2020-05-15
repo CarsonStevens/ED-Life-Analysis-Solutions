@@ -15,7 +15,12 @@ limitations under the License.
 */
 
 body {
-  font-family: Verdana, Helvetica, sans-serif;
-  background-color: #4848ed;
-  color: blue;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
+body { background-color: #30303d; color: #fff; }
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}
+ 
