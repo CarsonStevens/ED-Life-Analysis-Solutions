@@ -51,3 +51,17 @@ git config --global stevenscarson5
 git config --global stevenscarson5@gmail.com
 git config --global user.email stevenscarson5@gmail.com
 git config --global user.name Carson Stevens
+git commit -am "Initilalize Node app"
+git push
+git remote add ED Life Analysis Solution
+git push ED Life Analysis Solution
+git push https://github.com/CarsonStevens/ED-Life-Analysis-Solutions
+git push --set-upstream https://github.com/CarsonStevens/ED-Life-Analysis-Solutions master
+git push --force --set-upstream https://github.com/CarsonStevens/ED-Life-Analysis-Solutions master
+gcloud app deploy
+gcloud app browse
+npm install express
+gcloud app deploy
+gcloud app browse
+npm start
+git add .
