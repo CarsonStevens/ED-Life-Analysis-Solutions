@@ -23,6 +23,49 @@ limitations under the License.
 
 [data-theme="dark"] {}
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0c0e1c;
+  border: none;
+  border-radius: 0.25rem;
+  border-left: 1px solid #343874;
+}
+
+/* the buttons on the scrollbar (arrows pointing upwards and downwards). */
+::-webkit-scrollbar-button {
+  background: #343874;
+  color: #343874;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+/* the track (progress bar) NOT covered by the handle. */
+::-webkit-scrollbar-track-piece {
+    background: #0c0e1c;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #343874;
+  border: none;
+  border-radius: 0.15rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #14162e;
+}
+
+ /* the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet. */
+::-webkit-scrollbar-corner {
+  background-color: #0c0e1c;
+}
 
 html {
   height: 100%;
@@ -147,10 +190,49 @@ nav {
 
 #user-media {
   grid-area: media;
+  position: relative;
 }
 
 #user-media-title {
+  position: relative;
+}
 
+#newsfeed {
+  text-align: center;
+  margin: 0.6rem auto;
+  width: 91%;
+  height: 80%;
+  background-color: #0c0e1c;
+  border: 1px solid #0c0e1c;
+  border-radius: 0.25rem;
+  padding: 0.6rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+}
+
+.post {
+  position: aboslute;
+  display: block;
+  width: 100%;
+  font-size: 0.8rem;
+  text-align: left;
+  padding: 0rem 0.1rem 0.7rem;
+  margin: 1rem auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.image-post > img {
+  width: 100%;
+}
+
+.image-text-post > img {
+  width: 100%;
+  margin-bottom: 0.3rem;
+}
+
+.post:first-of-type {
+  margin-top: 0;
 }
 
 #entry-logs {
