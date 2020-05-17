@@ -9,7 +9,8 @@
     "js": "node --harmony"
   },
   "events": {
-    "restart": "echo 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
+    "restart": ""
   },
-  "ext": "js,ejs,css,html,svg,json"
+  "ext": "js,ejs,css,html,svg,json",
+  "delay": "1000"
 }
