@@ -172,3 +172,7 @@ series1.sequencedInterpolation = true;
  //     }
  //     return x;
  // });
+
+
+ // valueAxis.renderer.labels.template.fill = am4core.color("#A0CA92");
+ // valueAxis.renderer.labels.template.fontSize = 20;
