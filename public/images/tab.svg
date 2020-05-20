@@ -2,15 +2,13 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg
   width="100%"
-  height="0.5rem"
-  viewBox="0 0 150 50"
+  height="100%"
+  viewBox="0 0 625 209"
   version="1.1"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xml:space="preserve"
   xmlns:serif="http://www.serif.com/"
   style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><path
-  d="M148.146,49.909L1.968,49.816C0.321,49.859 0.198,49.433 0.151,47.858L0.32,2.025C0.34,0.928 0.517,0.293 2.003,0.248L119.616,0.34C124.318,0.34 128.468,3.086 130.923,7.26L149.637,47.517C149.848,47.974 150.279,49.948 148.146,49.909Z"
-  style="fill:black;stroke:#000;stroke-width:0.21px;"/>
-  <text x="2.06px" y="32.017px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:1rem;">Dashboard</text>
-</svg>
+  d="M617.277,207.954l-609.078,-0.387c-6.859,0.179 -7.375,-1.597 -7.572,-8.161l0.705,-153.469c0.117,-46.238 -5.429,-42.627 48.68,-42.82l448.388,-1.698c19.591,0 36.882,11.438 47.114,28.829l77.975,167.74c0.877,1.904 2.672,10.129 -6.212,9.966Z"
+  style="fill:none;stroke:#000;stroke-width:0.87px;"/></svg>

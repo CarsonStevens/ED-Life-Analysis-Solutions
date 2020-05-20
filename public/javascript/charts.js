@@ -45,7 +45,7 @@ function createDashboardChart(weights, stdWeights) {
   // Themes end
 
   // Create chart instance
-  let chart = am4core.create("chartdiv", am4charts.XYChart);
+  let chart = am4core.create("chart", am4charts.XYChart);
 
   // Add data to chart
   chart.data = createFakeData(weights, stdWeights);
@@ -235,17 +235,9 @@ function createFakeData(weights, stdWeights) {
   return chartData;
 }
 
+let weights = [170.0, 172.1, 170.5, 168.3, 169.9, 168.6, 169.7, 171.5, 170.4,
+  170.6, 171.5, 170.5, 168.7, 169.8, 171.5
+];
+let stdWeights = standardizeWeights(weights, 0);
 
-
-
-$(document).ready(function() {
-
-  let weights = [170.0, 172.1, 170.5, 168.3, 169.9, 168.6, 169.7, 171.5, 170.4,
-    170.6, 171.5, 170.5, 168.7, 169.8, 171.5
-  ];
-  let stdWeights = standardizeWeights(weights, 0);
-
-  createDashboardChart(weights, stdWeights);
-
-  $(".image-post > img, .image-text-post > img").attr({"width": $(this).parent().width()+"px"});
-});
+createDashboardChart(weights, stdWeights);

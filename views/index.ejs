@@ -11,52 +11,52 @@
 
 <body>
   <nav>
-    <div id="dashboard" class="tab selected-tab">
+    <section id="dashboard" class="tab selected-tab" data-tab="dashboard">
       <svg
         height="0.5rem"
-        viewBox="0 0 150 50"
+        viewBox="0 0 625 209"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xml:space="preserve"
         xmlns:serif="http://www.serif.com/"
         style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><path
-        d="M148.146,49.909L1.968,49.816C0.321,49.859 0.198,49.433 0.151,47.858L0.32,2.025C0.34,0.928 0.517,0.293 2.003,0.248L119.616,0.34C124.318,0.34 128.468,3.086 130.923,7.26L149.637,47.517C149.848,47.974 150.279,49.948 148.146,49.909Z"
+        d="M617.277,207.954l-609.078,-0.387c-6.859,0.179 -7.375,-1.597 -7.572,-8.161l0.705,-153.469c0.117,-46.238 -5.429,-42.627 48.68,-42.82l448.388,-1.698c19.591,0 36.882,11.438 47.114,28.829l77.975,167.74c0.877,1.904 2.672,10.129 -6.212,9.966Z"
         style="fill:#0c0e1c;stroke:#0c0e1c;stroke-width:0px;"/>
-        <text x="20px" y="30px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:0.75rem;fill:#fff;">Dashboard</text>
+        <text x="100px" y="130px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3rem;fill:#fff;">Dashboard</text>
       </svg>
-    </div>
-    <div id="entry" class="tab unselected-tab">
+    </section>
+    <section id="entry" class="tab unselected-tab" data-tab="entry">
       <svg
-        height="0.5rem"
-        viewBox="0 0 150 50"
+        height="0.5em"
+        viewBox="0 0 625 209"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xml:space="preserve"
         xmlns:serif="http://www.serif.com/"
         style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><path
-        d="M148.146,49.909L1.968,49.816C0.321,49.859 0.198,49.433 0.151,47.858L0.32,2.025C0.34,0.928 0.517,0.293 2.003,0.248L119.616,0.34C124.318,0.34 128.468,3.086 130.923,7.26L149.637,47.517C149.848,47.974 150.279,49.948 148.146,49.909Z"
+        d="M617.277,207.954l-609.078,-0.387c-6.859,0.179 -7.375,-1.597 -7.572,-8.161l0.705,-153.469c0.117,-46.238 -5.429,-42.627 48.68,-42.82l448.388,-1.698c19.591,0 36.882,11.438 47.114,28.829l77.975,167.74c0.877,1.904 2.672,10.129 -6.212,9.966Z"
         style="fill:#343874;stroke:#0c0e1c;stroke-width:0px;"/>
-        <text x="20px" y="30px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:0.75rem;fill:#fff;">Log Entry</text>
+        <text x="100px" y="130px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3rem;fill:#fff;">Log Entry</text>
       </svg>
-    </div>
-    <div id="settings" class="tab unselected-tab">
+    </section>
+    <section id="settings" class="tab unselected-tab" data-tab="settings">
       <svg
         height="0.5rem"
-        viewBox="0 0 150 50"
+        viewBox="0 0 625 209"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xml:space="preserve"
         xmlns:serif="http://www.serif.com/"
         style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><path
-        d="M148.146,49.909L1.968,49.816C0.321,49.859 0.198,49.433 0.151,47.858L0.32,2.025C0.34,0.928 0.517,0.293 2.003,0.248L119.616,0.34C124.318,0.34 128.468,3.086 130.923,7.26L149.637,47.517C149.848,47.974 150.279,49.948 148.146,49.909Z"
+        d="M617.277,207.954l-609.078,-0.387c-6.859,0.179 -7.375,-1.597 -7.572,-8.161l0.705,-153.469c0.117,-46.238 -5.429,-42.627 48.68,-42.82l448.388,-1.698c19.591,0 36.882,11.438 47.114,28.829l77.975,167.74c0.877,1.904 2.672,10.129 -6.212,9.966Z"
         style="fill:#424799;stroke:#0c0e1c;stroke-width:0px;"/>
-        <text x="20px" y="30px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:0.75rem;fill:#fff;">Settings</text>
+        <text x="100px" y="130px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3rem;fill:#fff;">Settings</text>
       </svg>
-    </div>
-    <div id="account">
+    </section>
+    <section id="account">
       <i class="fas fa-bell"></i>
       <i class="fas fa-user"></i>
       <svg id="logo"
@@ -76,26 +76,96 @@
           d="M1126.65,1046.89C831.678,663.753 1299.11,488.001 1638.76,597.147C1879.01,709.144 1649.24,874.995 1292.61,1039.16C1292.61,1039.16 1295.59,1037.81 1292.61,1039.16C1333.85,1094.42 1383.55,1115.88 1482.92,1193.97C-299.358,2425.59 1477.25,3794.95 2068.15,2417.12C1451.81,4083.74 -442.901,2347.49 1255.31,1182.68C1223.75,1154.39 1195.99,1126.98 1171.78,1100.45L1171.77,1100.46C1170.44,1101.06 -124.738,1660.85 372.838,2084.58C-284.29,1711.73 326.927,1269.27 841.58,1145.12C950.784,1118.78 1036.12,1081.81 1126.65,1046.89L1126.65,1046.89ZM1262.21,989.481C1689.77,798.319 1638.76,597.147 1406.58,707.321C1253.66,785.143 1212.91,885.951 1262.2,989.455L1262.21,989.481Z"/>
         </g>
         </svg>
-    </div>
+    </section>
   </nav>
   <main>
-    <div id="chartdiv"></div>
-    <div id="user-media">
-      <span id="user-media-title" class="dashboard-title">Newsfeed</span>
-      <div id="newsfeed">
-        <span class="text-post post">This is a test entry to log. Here you can makes notes and 'tag' people who 'follow' you to give them a notification.</span>
-        <span class="image-post post">
-          <img src="https://i.redd.it/h3oyl5lx4z531.jpg" />
-        </span>
-        <span class="image-text-post post">
-          <img src="https://preview.redd.it/fd24k6t5ovi31.jpg?width=640&crop=smart&auto=webp&s=3148db8f1c59f06045c8144c7442b4868fe1b678" />
-          My mom makes me feel like this every time I eat with her. Like I don't known that it isn't the healthiest.
-        </span>
-      </div>
-    </div>
-    <div id="entry-logs">
-      <span id="entry-logs-title" class="dashboard-title">Entry Logs</span>
-    </div>
+    <section id="dashboard-container" class="container">
+      <div id="chart"></div>
+      <section id="user-media">
+        <span id="user-media-title" class="dashboard-title">Newsfeed</span>
+        <section id="newsfeed">
+          <span class="text-post post">This is a test entry to log. Here you can makes notes and 'tag' people who 'follow' you to give them a notification.</span>
+          <span class="image-post post">
+            <img src="https://i.redd.it/h3oyl5lx4z531.jpg" />
+          </span>
+          <span class="image-text-post post">
+            <img src="https://preview.redd.it/fd24k6t5ovi31.jpg?width=640&crop=smart&auto=webp&s=3148db8f1c59f06045c8144c7442b4868fe1b678" />
+            My mom makes me feel like this every time I eat with her. Like I don't known that it isn't the healthiest.
+          </span>
+        </section>
+      </section>
+      <section id="entry-logs">
+        <span id="entry-logs-title" class="dashboard-title">Entry Logs</span>
+      </section>
+    </section>
+
+
+    <section id="entry-container" class="container">
+      <section id="calorie-search-container">
+        <!-- <iframe id="CalorieKing" width="95%" height="100%" src="https://www.calorieking.com/us/en/"></iframe> -->
+      </section>
+    </section>
+
+
+    <section id="settings-container" class="container">
+      <section class="setting">
+
+        <section id="account-settings-container">
+          <section id="account-settings-profile">
+            <span class="setting-title">Account Settings</span>
+
+            <span class="setting-subtitle">Contact Infomation</span>
+            <form id="contact-form"name="contact">
+
+              <label class="setting-sub-subtitle" for="name">Name: </label>
+              <input id="name-input" class="contact-input" type="text" name="name" placeholder="Name" value="Carson Stevens">
+              <br />
+
+              <label class="setting-sub-subtitle" for="prefered-name">Prefered Name: </label>
+              <input id="pname-input" class="contact-input" type="text" name="prefered-name" placeholder="Name you prefer to be called by" value="Carson">
+              <br />
+
+              <label class="setting-sub-subtitle" for="email">Email: </label>
+              <input id="email-input" class="contact-input" type="text" name="email" value="stevenscarson5@gmail.com" disabled>
+              <br />
+
+              <input id="contact-form-submit-input" type="submit" value="Save">
+            </form>
+          </section>
+
+          <section id="account-settings-theme">
+            <span class="setting-subtitle">Dashboard Themes</span>
+            <section id="theme-container">
+              <section class="theme">
+                <span class="theme-color" style="background-color: #1c1f3f"></span>
+                <span class="theme-color" style="background-color: #343874"></span>
+                <span class="theme-color" style="background-color: #424799"></span>
+                <span class="theme-color" style="background-color: rgba(255, 255, 255, 0.7)"></span>
+              </section>
+            </section>
+          </section>
+
+          <section id="account-settings-qr">
+            <span class="setting-subtitle">Account QR Code</span>
+            <img id="user-qr-code-img" src="https://miro.medium.com/max/1424/1*sHmqYIYMV_C3TUhucHrT4w.png" alt="user qr code" />
+          </section>
+
+          <section id="account-settings">
+            <span class="setting-subtitle">General Settings</span>
+          </section>
+        </section>
+      </section>
+
+
+      <section class="setting">
+        <span class="setting-title">Privacy Settings</span>
+      </section>
+
+
+      <section class="setting">
+        <span class="setting-title">Visibility Settings</span>
+      </section>
+    </section>
   </main>
 
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
@@ -103,6 +173,7 @@
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/dark.js"></script>
 <script src="javascript/charts.js"></script>
+<script src="javascript/navigation.js"></script>
 </body>
 
 </html>
