@@ -22,4 +22,21 @@ $(document).ready(function() {
     }
   });
 
+  $("#user-media-title").on("click", function() {
+    if($("#floating-newsfeed-container").css("display") == "none") {
+      $("#floating-newsfeed-container").css({"display": "flex"}).html(`
+        <i id="floating-newsfeed-exit" class="fas fa-times-circle"></i>
+        <span id="floating-newsfeed-title" class="dashboard-title">Newsfeed</span>
+        <section id="floating-newsfeed">
+          ${$("#newsfeed").html()}
+        </section>
+        `);
+      $("#floating-newsfeed-exit").on("click", function() {
+        $("#floating-newsfeed-container").css({"display": "none"});
+      });
+
+    } else {
+      $("#floating-newsfeed-container").css({"display": "none"});
+    }
+  });
 });

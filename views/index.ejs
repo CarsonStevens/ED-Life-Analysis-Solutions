@@ -10,6 +10,8 @@
 </head>
 
 <body>
+  <section id="floating-newsfeed-container"></section>
+  </section>
   <nav>
     <section id="dashboard" class="tab selected-tab" data-tab="dashboard">
       <svg
@@ -80,7 +82,10 @@
   </nav>
   <main>
     <section id="dashboard-container" class="container">
+
+
       <div id="chart"></div>
+
       <section id="user-media">
         <span id="user-media-title" class="dashboard-title">Newsfeed</span>
         <section id="newsfeed">
@@ -94,8 +99,17 @@
           </span>
         </section>
       </section>
-      <section id="entry-logs">
-        <span id="entry-logs-title" class="dashboard-title">Entry Logs</span>
+      <section id="goals">
+        <span id="goalfeed-title" class="dashboard-title">Goals</span>
+        <!-- <i class="fas fa-filter"></i> -->
+        <section id="goalfeed">
+          <article class="goal">
+            <p class="goal-text">
+              This is a test goal to see how a goal will look.
+            </p>
+            <em>Set by</em> <span class="author">Carson</span> <em>on</em> <span class="goal-date">May 20, 2019</span>
+          </article>
+        </section>
       </section>
     </section>
 
@@ -151,7 +165,63 @@
           </section>
 
           <section id="account-settings">
-            <span class="setting-subtitle">General Settings</span>
+            <span class="setting-subtitle">Monitor Settings</span>
+            <section id="account-setting-container">
+              <section class="account-setting">
+                <span class="setting-sub-subtitle">Give Control to Medical Team: </span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input id="account-monitor-control" type="checkbox" class="switch__input">
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+              </section>
+              <section class="account-setting">
+                <span class="setting-sub-subtitle">Weight</span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input id="account-weight-control" type="checkbox" class="switch__input">
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+              </section>
+              <section class="account-setting">
+                <span class="setting-sub-subtitle">Feelings: </span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input id="account-feelings-control" type="checkbox" class="switch__input">
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+              </section>
+              <section class="account-setting">
+                <span class="setting-sub-subtitle">Calories: </span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input id="account-calories-control" type="checkbox" class="switch__input">
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+              </section>
+              <section class="account-setting">
+                <span class="setting-sub-subtitle">Water: </span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input id="account-water-control" type="checkbox" class="switch__input">
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+              </section>
+              <section class="account-setting">
+                <span class="setting-sub-subtitle" >Sleep: </span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input id="account-sleep-control" type="checkbox" class="switch__input" disabled>
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+              </section>
+            </section>
           </section>
         </section>
       </section>
