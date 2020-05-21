@@ -115,8 +115,16 @@
 
 
     <section id="entry-container" class="container">
-      <section id="calorie-search-container">
-        <!-- <iframe id="CalorieKing" width="95%" height="100%" src="https://www.calorieking.com/us/en/"></iframe> -->
+      <section id="chart-entry-container">
+        <section id="calorie-search-container" data-visibility="">
+          <!-- <iframe id="CalorieKing" width="95%" height="100%" src="https://www.calorieking.com/us/en/"></iframe> -->
+        </section>
+      </section>
+      <section id="newsfeed-post-container">
+        Newsfeed Post Container: Make a post
+      </section>
+      <section id="goal-reflection-container">
+        Goal reflection container: Reflect on a goal
       </section>
     </section>
 
@@ -151,7 +159,7 @@
             <span class="setting-subtitle">Dashboard Themes</span>
             <section id="theme-container">
               <section class="theme">
-                <span class="theme-color" style="background-color: #1c1f3f"></span>
+                <span class="theme-color data-selected="true" style="background-color: #1c1f3f"></span>
                 <span class="theme-color" style="background-color: #343874"></span>
                 <span class="theme-color" style="background-color: #424799"></span>
                 <span class="theme-color" style="background-color: rgba(255, 255, 255, 0.7)"></span>
@@ -227,8 +235,17 @@
       </section>
 
 
-      <section class="setting">
+      <section class="setting" id="settings-privacy">
         <span class="setting-title">Privacy Settings</span>
+        <section id="settings-privacy-medical">
+          <span class="settings-subtitle">Medical Team Members</span>
+        </section>
+        <section id="settings-privacy-family">
+          <span class="settings-subtitle">Family Members</span>
+        </section>
+        <section id="settings-privacy-other">
+          <span class="settings-subtitle">Other Support</span>
+        </section>
       </section>
 
 
@@ -237,13 +254,15 @@
       </section>
     </section>
   </main>
-
-<script src="https://www.amcharts.com/lib/4/core.js"></script>
-<script src="https://www.amcharts.com/lib/4/charts.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/dark.js"></script>
-<script src="javascript/charts.js"></script>
-<script src="javascript/navigation.js"></script>
+  <section>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/dark.js"></script>
+    <script src="javascript/charts.js"></script>
+    <script src="javascript/navigation.js"></script>
+    <script src="javascript/entry-log.js"></script>
+  </section>
 </body>
 
 </html>
