@@ -4,15 +4,27 @@
 <head>
   <meta charset="utf-8">
   <title>ED Life Analysis Solutions</title>
-  <link type="text/css" href="stylesheets/styles.css" rel="stylesheet">
+
+
+<script src="javascript/jquery-3.4.1.min.js"></script>
+
+
+
+
   <script src="https://kit.fontawesome.com/746df76887.js" crossorigin="anonymous"></script>
-  <script src="javascript/jquery-3.4.1.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+<link type="text/css" href="stylesheets/styles.css" rel="stylesheet">
 </head>
 
 <body>
+
   <section id="floating-newsfeed-container"></section>
-  </section>
+  <section id="floating-goalfeed-container"></section>
+
   <nav>
+
     <section id="dashboard" class="tab selected-tab" data-tab="dashboard">
       <svg
         height="0.5rem"
@@ -28,6 +40,7 @@
         <text x="100px" y="130px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3rem;fill:#fff;">Dashboard</text>
       </svg>
     </section>
+
     <section id="entry" class="tab unselected-tab" data-tab="entry">
       <svg
         height="0.5em"
@@ -43,6 +56,7 @@
         <text x="100px" y="130px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3rem;fill:#fff;">Log Entry</text>
       </svg>
     </section>
+
     <section id="settings" class="tab unselected-tab" data-tab="settings">
       <svg
         height="0.5rem"
@@ -58,6 +72,7 @@
         <text x="100px" y="130px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3rem;fill:#fff;">Settings</text>
       </svg>
     </section>
+
     <section id="account">
       <i class="fas fa-bell"></i>
       <i class="fas fa-user"></i>
@@ -80,9 +95,10 @@
         </svg>
     </section>
   </nav>
-  <main>
-    <section id="dashboard-container" class="container">
 
+  <main>
+
+    <section id="dashboard-container" class="container">
 
       <div id="chart"></div>
 
@@ -99,6 +115,7 @@
           </span>
         </section>
       </section>
+
       <section id="goals">
         <span id="goalfeed-title" class="dashboard-title">Goals</span>
         <!-- <i class="fas fa-filter"></i> -->
@@ -111,21 +128,74 @@
           </article>
         </section>
       </section>
+
     </section>
 
 
     <section id="entry-container" class="container">
       <section id="chart-entry-container">
-        <section id="calorie-search-container" data-visibility="">
-          <!-- <iframe id="CalorieKing" width="95%" height="100%" src="https://www.calorieking.com/us/en/"></iframe> -->
+        <section class="swiper-container">
+          <section class="swiper-wrapper">
+            <section id="weight-entry-container" class="chart-feature swiper-slide" data-visibility="">
+              Weight Entry
+            </section>
+            <section id="calorie-entry-container" class="chart-feature swiper-slide" data-visibility="">
+              <section id="calorie-entry-input-container">
+                <label class="chart-title" for="entry-calories">Calories</label>
+                <span class="entry-input-directions">
+                  Enter the calories since the start of the day or since your last entry.
+                </span>
+
+                <input id="calories-input" class="contact-input" type="text" name="entry-calories" placeholder="Enter amount" value=""> <span class="entry-input-units">cals</span>
+              </section>
+              <section id="calorie-search-container" data-visibility="" class="">
+                <label class="chart-title" for="entry-food-search">Food Search</label>
+                <span class="entry-input-directions">
+                  Enter a food to retrieve its infostats.
+                </span>
+
+                <input id="food-search-input" class="contact-input" type="text" name="entry-food-search" placeholder="What did you eat?">
+              </section>
+            </section>
+            <section id="feelings-entry-container" class="chart-feature swiper-slide" data-visibility="">
+              Feelings
+            </section>
+            <section id="exercise-entry-container" class="chart-feature swiper-slide" data-visibility="">
+              Exercise
+            </section>
+            <section id="water-entry-container" class="chart-feature swiper-slide" data-visibility="">
+              Water
+            </section>
+            <section id="sleep-entry-container" class="chart-feature swiper-slide" data-visibility="">
+              Sleep
+            </section>
         </section>
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+
+
+
       </section>
+
+
+      </section>
+
       <section id="newsfeed-post-container">
         Newsfeed Post Container: Make a post
       </section>
+
       <section id="goal-reflection-container">
         Goal reflection container: Reflect on a goal
       </section>
+
     </section>
 
 
@@ -159,7 +229,7 @@
             <span class="setting-subtitle">Dashboard Themes</span>
             <section id="theme-container">
               <section class="theme">
-                <span class="theme-color data-selected="true" style="background-color: #1c1f3f"></span>
+                <span class="theme-color" data-selected="true" style="background-color: #1c1f3f"></span>
                 <span class="theme-color" style="background-color: #343874"></span>
                 <span class="theme-color" style="background-color: #424799"></span>
                 <span class="theme-color" style="background-color: rgba(255, 255, 255, 0.7)"></span>
@@ -212,6 +282,15 @@
                 </section>
               </section>
               <section class="account-setting">
+                <span class="setting-sub-subtitle">Exercise: </span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input id="account-exercise-control" type="checkbox" class="switch__input">
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+              </section>
+              <section class="account-setting">
                 <span class="setting-sub-subtitle">Water: </span>
                 <section class="switch toggle">
                   <label class="switch__label">
@@ -250,10 +329,12 @@
 
 
       <section class="setting">
-        <span class="setting-title">Visibility Settings</span>
+        <span class="setting-title">Chart Settings</span>
       </section>
     </section>
+
   </main>
+
   <section>
     <script src="https://www.amcharts.com/lib/4/core.js"></script>
     <script src="https://www.amcharts.com/lib/4/charts.js"></script>
@@ -261,8 +342,12 @@
     <script src="https://www.amcharts.com/lib/4/themes/dark.js"></script>
     <script src="javascript/charts.js"></script>
     <script src="javascript/navigation.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="javascript/entry-log.js"></script>
   </section>
+
 </body>
 
 </html>
