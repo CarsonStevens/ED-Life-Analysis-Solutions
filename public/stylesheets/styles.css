@@ -350,6 +350,7 @@ nav {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
@@ -363,24 +364,83 @@ nav {
 
 .entry-input-directions {
   display: block;
+  width: 70%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.25rem;
+  text-align: center;
+
 }
 
 .entry-input-directions, .entry-input-units {
   font-size: 0.7rem;
+  margin: 0 auto 1rem;
 }
 
 .chart-title {
+  text-align: center;
   font-size: 1rem;
   display: block;
+  width: 85%;
+  margin: 1rem auto;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-#weight-entry-container {}
+#weight-entry-container {
+  align-items: start;
+}
+
+#weight-entry-input-container {
+  display: flex;
+  flex-direction: row;
+  margin: auto 2rem;
+  justify-content: space-around;
+}
+
+#weight-input-manual {
+  width: 36%;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+  margin-right: 0.65rem;
+}
+
+#weight-input-manual:focus {
+  width: 40%;
+  padding-right: 1.5rem;
+}
+
+
+#weight-entry-input-container > section {
+  width: 33%;
+  height: 10rem;
+  text-align: center;
+}
+
+/* For direction */
+#weight-entry-input-container > section > span {
+  margin: 0.25rem auto;
+  text-align: center;
+}
 
 #calorie-entry-input-container {
-  width: 70%;
+  width: 60%;
   text-align: center;
   margin: 1rem;
   margin-left: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  position: relative;
 }
 
 #calorie-search-container {
@@ -388,12 +448,27 @@ nav {
   text-align: center;
   margin: 1rem;
   margin-right: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  position: relative;
 }
 
 #calorie-entry-container {
   display: flex;
-  direction: row;
-  align-items: baseline;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-around;
 }
 
 #feelings-entry-container {}
@@ -505,7 +580,7 @@ input[type=time]::-webkit-clear-button {
 }
 
 .swiper-button-disabled {
-  filter: opacity(0.7);
+  filter: opacity(0);
 }
 
 .swiper-button-hidden {}
