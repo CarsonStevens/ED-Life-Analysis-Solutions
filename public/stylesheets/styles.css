@@ -21,6 +21,49 @@ limitations under the License.
 
 [data-theme="dark"] {}
 
+@keyframes DeleteShake {
+  0% {
+    transform: translateX(-5px);
+    border: 2px solid rgba(255, 0, 0, 0.3);
+  }
+
+  10% {
+    transform: translateX(5px);
+  }
+
+  20% {
+    transform: translateX(-5px);
+  }
+
+  30% {
+    transform: translateX(5px);
+  }
+
+  40% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  60% {
+    transform: translateX(-5px);
+  }
+
+  70% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.delete-shake {
+  animation: DeleteShake 1s infinite 0s linear;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -63,6 +106,25 @@ limitations under the License.
 /* the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet. */
 ::-webkit-scrollbar-corner {
   background-color: #0c0e1c;
+}
+
+.without_ampm::-webkit-datetime-edit-ampm-field {
+  display: none;
+}
+
+input[type=time]::-webkit-clear-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  margin: -10px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 html {
@@ -217,7 +279,8 @@ nav {
   height: 100%;
 }
 
-#floating-newsfeed-container, #floating-goalfeed-container {
+#floating-newsfeed-container,
+#floating-goalfeed-container {
   position: absolute;
   left: 15%;
   top: 6%;
@@ -234,7 +297,9 @@ nav {
   display: none;
 }
 
-#floating-newsfeed-exit, #floating-goalfeed-exit {
+#floating-newsfeed-exit,
+#floating-goalfeed-exit,
+#floating-feelings-wheel-exit {
   position: absolute;
   top: -0.75rem;
   right: -1.5rem;
@@ -368,7 +433,6 @@ nav {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 0.25rem;
   text-align: center;
-
 }
 
 .entry-input-directions, .entry-input-units {
@@ -387,13 +451,16 @@ nav {
 }
 
 #weight-entry-container {
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 #weight-entry-input-container {
   display: flex;
   flex-direction: row;
-  margin: auto 2rem;
+  margin: 1rem 2rem 0;
   justify-content: space-around;
 }
 
@@ -409,15 +476,14 @@ nav {
   padding-right: 1.5rem;
 }
 
-
-#weight-entry-input-container > section {
+#weight-entry-input-container>section {
   width: 33%;
   height: 10rem;
   text-align: center;
 }
 
 /* For direction */
-#weight-entry-input-container > section > span {
+#weight-entry-input-container>section>span {
   margin: 0.25rem auto;
   text-align: center;
 }
@@ -464,100 +530,337 @@ nav {
   position: relative;
 }
 
-#calorie-entry-container {
+#calorie-entry-container,
+#feelings-entry-container {
   display: flex;
   flex-direction: row;
   align-items: start;
   justify-content: space-around;
 }
 
-#feelings-entry-container {}
+#feelings-entry-container {
+  text-align: center;
+}
 
-#exercise-entry-container {}
+#feelings-entry-input-container {
+  width: 40%;
+  height: 100%;
+  margin-left: 2rem;
+}
+
+#feelings-input-btn, #chart-entry-button {
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  display: block;
+  background: #343874;
+  border: none;
+  border-radius: 0.5rem;
+  margin: 0.5rem auto 0;
+  width: 7rem;
+  transform: scale(1,1);
+}
+
+#feelings-input-btn:hover,
+#chart-entry-button:hover {
+  background: #0c0e1c;
+  transform: scale(1.1,1.1);
+  cursor: pointer;
+}
+
+#feelings-list {
+  list-style-type: none;
+  position: relative;
+  background-color: #0c0e1c;
+  border: none;
+  border-radius: 0.25rem;
+  width: 60%;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  display: none;
+}
+
+.feeling {
+  margin: 0.25rem auto;
+  padding: 0.1rem 0;
+  background-color: #424799;
+  border: none;
+  border-radius: 0.1rem;
+  width: 80%;
+  position: relative;
+}
+
+.feeling>.feeling-delete {
+  position: absolute;
+  left: 80%;
+  top: 0.05rem;
+}
+
+#feelings-wheel-container {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  margin-right: 2rem;
+}
+
+#feelings-wheel {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: -0.25rem auto 1.25rem;
+}
+
+#floating-feelings-wheel-container {
+  width: 80vw;
+  height: 80vw;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  background-color: #0c0e1c;
+  border: 1px solid #343874;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  z-index: 1000;
+}
+
+#floating-feelings-wheel {
+  position: relative;
+  display: block;
+  margin: auto;
+  --floating--felings-wheel-margins: 0.75rem;
+  width: calc(100% - calc(var(--floating--felings-wheel-margins) * 2));
+  height: auto;
+  margin: var(--floating--felings-wheel-margins);
+}
+
+.entry-container {
+  position: relative;
+  margin: 0.5rem auto;
+  width: 80%;
+  height: 3rem;
+}
+#exercise-entry-container {
+  justify-content: flex-start;
+}
+
+.entry-container > .entry-input-directions {
+  margin-bottom: 0.25rem;
+}
+
+#entry-exercise-type-container {
+  height: 2rem;
+}
+
+#exercise-type-input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.1rem 0.35rem;
+  color: rgba(255,255,255,0.7);
+  background-color: #0c0e1c;
+  border: 1px solid #343874;
+  border-radius: 0.25rem;
+  transform: scale(1,1);
+}
+
+#exercise-type-input:hover {
+  transform: scale(1.1,1.1);
+}
+
+#entry-exercise-info-container {
+  height: 5rem;
+}
+
+#exercise-info-input {
+  display: block;
+  padding: 0.25rem;
+  background-color: rgba(255,255,255,0.5);
+  color: #0c0e1c;
+  border: 1px solid #343874;
+  border-radius: 0.25rem;
+  margin: 0.25rem auto;
+}
+
+#entry-exercise-duration-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-start;
+  pointer-events: none;
+}
+#exercise-duration-container,
+#sleep-input-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  margin: 0.5rem auto;
+  justify-content: center;
+}
 
 #entry-exercise-duration-container-h,
 #entry-exercise-duration-container-m,
-#entry-water-container {
+#entry-water-container,
+#sleep-input-start-container,
+#sleep-input-end-container {
   position: relative;
+  display: block;
+  width: auto;
+  margin: 0 1rem;
+}
+
+#entry-exercise-duration-container-h > label,
+#entry-exercise-duration-container-m > label,
+#entry-water-container > label {
+  display: inline-block;
+  padding: 0.25rem 2.75rem 0.25rem 0.25rem;
+  width: auto;
+  margin-bottom: 0;
+}
+
+#entry-exercise-duration-container-h > *,
+#entry-exercise-duration-container-m > *,
+#entry-water-container > *{
   display: inline-block;
 }
+
 input[type=number] {
+  margin: 0 0.25rem;
   position: absolute;
-  width: 2rem;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  width: 1.75rem;
   height: 1.5rem;
   padding: 0.10rem;
   padding-left: 0.25rem;
   font-size: 1rem;
-  color: rgba(255,255,255,0.7);
-  border: solid 0.5px rgba(255,255,255,0.3);
+  color: rgba(255, 255, 255, 0.7);
+  border: solid 0.5px rgba(255, 255, 255, 0.3);
   border-radius: 0.25rem;
-  z-index: 1;
   background-color: #0c0e1c;
+  display: inline-block;
+  pointer-events: none;
+}
+
+
+
+.spinner-btn-container {
+  position: absolute;
+  width: auto;
+  height: 1.8rem;
+  width: 1rem;
+  bottom: 0.3rem;
+  right: 0.1rem;
+  display: flex;
+  flex-direction: column;
 
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.spinner-btn-container:hover {
+  cursor: pointer;
 }
 
 .spinner-button {
-  position: absolute;
+  position: relative;
   cursor: default;
   z-index: 2;
   display: block;
-  background-image: linear-gradient( 0deg,  #1c1f3f 40%, rgb(0, 122, 255) 50%, #1c1f3f 60% );
-  --spinner-width: calc(var(--number-input-height) / 2);
-  width: 0.75rem;
+  background-image: linear-gradient(0deg, #1c1f3f 40%, rgb(0, 122, 255) 50%, #1c1f3f 60%);
+  width: 100%;
   text-align: center;
   margin: 0px;
-  padding: 0.1rem;
-  pointer-events: none;
-  height: 0.75rem;
+  height: 50%;
   font-size: 0.7rem;
-  border: solid 0.5px rgba(255,255,255,0.5);
+  border: solid 0.5px rgba(255, 255, 255, 0.5);
   border-radius: 0.1rem;
+  z-index: 10000;
+  pointer-events: auto;
 }
 
 .inc-button {
-  top: 0.75rem;
-  left: 2rem;
+  top: 0;
 }
 
 .dec-button {
-  top: 1.95rem;
-  left: 2rem;
+  bottom: 0;
 }
 
 .center {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50% , -55%);
+  transform: translate(-50%, -55%);
   -webkit-transform: translate(-50%, -55%);
 }
 
-#water-entry-container {}
-
-#entry-water-container {
-
-}
-
-#sleep-entry-container {}
-
-.without_ampm::-webkit-datetime-edit-ampm-field {
+#exercise-entry-container > section:not(:first-of-type){
   display: none;
 }
 
-input[type=time]::-webkit-clear-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -o-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  margin: -10px;
+#water-entry-container {
+  justify-content: flex-start;
+  position: relative;
 }
+#water-entry {
+  top: -0.3rem;
+  right: 1rem;
+}
+
+#entry-water-container > .spinner-btn-container {
+  right: 0.9rem;
+  bottom: 0.85rem;
+}
+
+#sleep-entry-container {
+  justify-content: flex-start;
+}
+
+#sleep-input-start-container,
+#sleep-input-end-container {
+  width: 45%;
+  position: relative;
+}
+
+#sleep-input-start-container > .entry-input-directions,
+#sleep-input-end-container > .entry-input-directions {
+  padding-right: 6.5rem;
+  width: 45%;
+  margin-bottom: 0;
+}
+
+#sleep-entry-start,
+#sleep-entry-end {
+  font-size: 0.8rem;
+  position: absolute;
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+  width: 4.5rem;
+  display: block;
+  bottom: 0.3rem;
+  right: 1.5rem;
+  vertical-align: middle;
+  outline: 0;
+  color: rgba(255, 255, 255, 0.7);
+  border: solid 0.5px rgba(255, 255, 255, 0.3);
+  border-radius: 0.25rem;
+  background-color: #0c0e1c;
+}
+
+#submit-entry-container > .chart-title {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+#chart-entry-button {
+
+}
+
 
 .swiper-pagination {}
 

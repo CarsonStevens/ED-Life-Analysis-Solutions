@@ -62,7 +62,7 @@ $(document).ready(function() {
 
     grabCursor: true,
     noSwipingSelector: 'input',
-
+    noSwipingClass: 'swiper-no-swiping',
     watchSlidesProgress: true,
     paginationClickable: true,
 
@@ -104,4 +104,60 @@ $(document).ready(function() {
     return /^\d*\.?\d*$/.test(value); // Allow digits and '.' only, using a RegExp
   });
 
+  $("#feelings-input-btn").click(function() {
+    $("#feelings-list").css({'display': 'block'});
+    let feelingStr = $("#feelings-input").val();
+    if(feelingStr.length > 0) {
+      $("#feelings-list").append(`
+          <li class="feeling" data-feeling="${feelingStr}">${feelingStr}<i class="fas fa-times-circle feeling-delete"></i></li>
+        `);
+      $("#feelings-input").val('');
+      $(".feeling > .fa-times-circle").hover(function() {
+        let feeling = $(this).parent();
+        $(feeling).addClass("delete-shake");
+        $(this).on("click", function() {
+          $(this).parent().remove();
+          if($("#feelings-list").children().length == 0) $("#feelings-list").css({'display': 'none'});
+        });
+      }, function() {
+        $(this).parent().removeClass("delete-shake");
+      });
+    } else {
+      alert("You didn't enter a feeling, silly!");
+    }
+  });
+
+
+  $("#feelings-wheel").on("click", function() {
+    if($("#floating-feelings-wheel-container").css('display') == 'none') $("#floating-feelings-wheel-container").css({'display': 'flex'});
+  });
+  $("#floating-feelings-wheel-exit").on("click", function() {
+    $("#floating-feelings-wheel-container").css({"display": "none"});
+  });
+
+  let floatingFeelingsWheelTimer = null;
+  let floatDelay = 250;
+  $("#feelings-wheel").on("mouseover", function() {
+    floatingFeelingsWheelTimer = setTimeout(function(){
+      if($("#floating-feelings-wheel-container").css('display') == 'none') $("#floating-feelings-wheel-container").css({'display': 'flex'});
+    }, floatDelay);
+  }, function() {
+    clearTimeout(floatingFeelingsWheelTimer);
+  });
+
+
+  // Spinner Controls
+  $(".inc-button").on("click", function() {
+    let input = $(this).parent().parent().children("input");
+    $(input).val(parseInt($(input).val())+$(input).data("step"));
+  });
+  $(".dec-button").click(function() {
+    let input = $(this).parent().parent().children("input");
+    if(parseInt($(input).val()) > 0) $(input).val(parseInt($(input).val())-$(input).data("step"));
+  });
+
+  $("#exercise-type-input").change(function() {
+    if($(this).val() == 'none') $("#exercise-entry-container > section:not(:first-of-type)").css({'display': 'none'});
+    else $("#entry-exercise-info-container, #entry-exercise-duration-container").css({'display': 'grid'});
+  });
 });

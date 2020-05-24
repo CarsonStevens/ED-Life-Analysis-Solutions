@@ -22,6 +22,10 @@
 
   <section id="floating-newsfeed-container"></section>
   <section id="floating-goalfeed-container"></section>
+  <section id="floating-feelings-wheel-container">
+    <i id="floating-feelings-wheel-exit" class="fas fa-times-circle"></i>
+    <img id="floating-feelings-wheel" src="http://feelingswheel.com/feelings-wheel.jpg" />
+  </section>
 
   <nav>
 
@@ -112,8 +116,9 @@
       <section id="chart-entry-container">
         <section class="swiper-container">
           <section class="swiper-wrapper">
+
             <section id="weight-entry-container" class="chart-feature swiper-slide" data-visibility="">
-              <label class="chart-title" for="entry-weight">Weight</label>
+              <span class="chart-title">Weight</span>
 
               <section id="weight-entry-input-container">
                 <section id="weight-entry-manual-input">
@@ -150,6 +155,7 @@
                 </section>
               </section>
             </section>
+
             <section id="calorie-entry-container" class="chart-feature swiper-slide" data-visibility="">
               <section id="calorie-entry-input-container">
                 <label class="chart-title" for="entry-calories">Calories</label>
@@ -168,76 +174,112 @@
                 <input id="food-search-input" class="contact-input" type="text" name="entry-food-search" placeholder="What did you eat?">
               </section>
             </section>
+
             <section id="feelings-entry-container" class="chart-feature swiper-slide" data-visibility="">
-              <label class="chart-title" for="entry-feelings">Feelings</label>
-              <span class="entry-input-directions">
-                Enter some words or click on some tiles on the feelings wheel to describe how you're feeling.
-              </span>
-              <input id="feelings-input" class="contact-input" type="text" name="entry-feelings" placeholder="Enter a feeling">
+              <section id="feelings-entry-input-container">
+                <span class="chart-title">Feelings</span>
+                <span class="entry-input-directions">
+                  Enter some words or click on some tiles on the feelings wheel to describe how you're feeling.
+                </span>
+                <input id="feelings-input" class="contact-input" type="text" name="entry-feelings" placeholder="Enter a feeling">
+                <span id="feelings-input-btn">Add Feeling</span>
+                <ul id="feelings-list"></ul>
+              </section>
+
+              <section id="feelings-wheel-container">
+                <span class="chart-title">Feelings Wheel</span>
+                <span class="entry-input-directions">
+                  Explore what you are feeling right now. Click on the feelings to add them to the list.
+                </span>
+                <img id="feelings-wheel" class="swiper-no-swiping" src="http://feelingswheel.com/feelings-wheel.jpg" />
+              </section>
             </section>
+
             <section id="exercise-entry-container" class="chart-feature swiper-slide" data-visibility="">
-              <label for="entry-exercise-type" class="entry-input-directions">Type of Exercise: </label>
-              <select id="exercise-type-input" name="entry-exercise-type">
-                <option value="none">None</option>
-                <option value="strength">Strength</option>
-                <option value="aerobic">Aerobic</option>
-                <option value="flexibility">Flexibility</option>
-                <option value="balance">Balance</option>
-              </select>
-              <section id="entry-exercise-info-container">
+              <span class="chart-title">Exercise</span>
+              <section id="entry-exercise-type-container" class="entry-container">
+                <label for="entry-exercise-type" class="entry-input-directions">Type of Exercise: </label>
+                <select id="exercise-type-input" name="entry-exercise-type">
+                  <option value="none">None</option>
+                  <option value="strength">Strength</option>
+                  <option value="aerobic">Aerobic</option>
+                  <option value="flexibility">Flexibility</option>
+                  <option value="balance">Balance</option>
+                </select>
+              </section>
+              <section id="entry-exercise-info-container" class="entry-container">
                 <label for="entry-exercise-info" class="entry-input-directions">What did you do?</label>
-                <textarea id="exercise-info-input" name="entry-exercise-info" rows="4" cols="50">
-                  Enter what you did when you exercised
-                </textarea>
+                <textarea id="exercise-info-input" name="entry-exercise-info" rows="4" cols="50" placeholder="Enter what you did when you exercised"></textarea>
               </section>
               <section id="entry-exercise-duration-container">
                 <span class="entry-input-directions">
                   How long did you work out?
                 </span>
-                <section id="entry-exercise-duration-container-h">
-                  <label class="entry-input-directions" for="entry-exercise-duration-h">Hours: </label>
-                  <input id="exercise-duration-entry-h" type="number" name="entry-exercise-duration-h" value="0" min="0" max="24" />
-                  <div id="inc-button-h" class="spinner-button inc-button"><span class="center">+</span></div>
-                  <div id="dec-button-h" class="spinner-button dec-button"><span class="center">-</span></div>
+                <section id="exercise-duration-container">
+                  <section id="entry-exercise-duration-container-h">
+                    <label class="entry-input-directions" for="entry-exercise-duration-h">Hours: </label>
+                    <input id="exercise-duration-entry-h" type="number" name="entry-exercise-duration-h" value="0" min="0" max="24" data-step="1"/>
+                    <section class="spinner-btn-container">
+                      <div id="inc-button-h" class="spinner-button inc-button"><span class="center">+</span></div>
+                      <div id="dec-button-h" class="spinner-button dec-button"><span class="center">-</span></div>
+                    </section>
+                  </section>
+                  <section id="entry-exercise-duration-container-m">
+                    <label class="entry-input-directions" for="entry-exercise-duration-m">Minutes: </label>
+                    <input id="exercise-duration-entry-m" type="number" name="entry-exercise-duration-m" value="0" min="0" max="60"  data-step="5"/>
+                    <section class="spinner-btn-container">
+                      <div id="inc-button-m" class="spinner-button inc-button"><span class="center">+</span></div>
+                      <div id="dec-button-m" class="spinner-button dec-button"><span class="center" data-step="5">-</span></div>
+                    </section>
                 </section>
-                <section id="entry-exercise-duration-container-m">
-                  <label class="entry-input-directions" for="entry-exercise-duration-m">Minutes: </label>
-                  <input id="exercise-duration-entry-m" type="number" name="entry-exercise-duration-m" value="0" min="0" max="60" />
-                  <div id="inc-button-m" class="spinner-button inc-button"><span class="center">+</span></div>
-                  <div id="dec-button-m" class="spinner-button dec-button"><span class="center">-</span></div>
+
+
                 </section>
 
               </section>
             </section>
+
             <section id="water-entry-container" class="chart-feature swiper-slide" data-visibility="">
-              <span class="chart-title">Water</label>
-                <span class="entry-input-directions">
-                  Enter the amount of water you drank today or since your last weigh in.
-                </span>
-                <section id="entry-water-container">
-                  <label class="entry-input-directions" for="entry-water">Amount of Water: </label>
-                  <input id="water-entry" type="number" name="water" value="0" min="0" max="60" /> <span class="entry-input-units">oz</span>
+              <span class="chart-title">Water</span>
+              <span class="entry-input-directions">
+                Enter the amount of water you drank today or since your last weigh in.
+              </span>
+              <section id="entry-water-container">
+                <label class="entry-input-directions" for="entry-water">Amount of Water: </label>
+                <input id="water-entry" type="number" name="water" value="0" min="0" data-step="8" /> <span class="entry-input-units">oz</span>
+                <section class="spinner-btn-container">
                   <div id="inc-button-w" class="spinner-button inc-button"><span class="center">+</span></div>
                   <div id="dec-button-w" class="spinner-button dec-button"><span class="center">-</span></div>
                 </section>
+              </section>
             </section>
+
             <section id="sleep-entry-container" class="chart-feature swiper-slide" data-visibility="">
-              <span class="chart-title">Sleeping</label>
+              <span class="chart-title">Sleeping</span>
                 <span class="entry-input-directions">
                   Enter the times you slept from last night or since your last weigh in.
                 </span>
-                <label class="chart-title" for="entry-sleep-start">Started Sleeping at: </label>
-                <input id="sleep-entry-end" name="entry-sleep-start" type="time" value="21:30" />
-                <label class="chart-title" for="entry-sleep-end">Ended Sleeping at: </label>
-                <input id="sleep-entry-end" name="entry-sleep-end" type="time" value="07:00" />
+                <section id="sleep-input-container">
+                  <section id="sleep-input-start-container">
+                    <label class="entry-input-directions" for="entry-sleep-start">Started Sleeping at: </label>
+                    <input id="sleep-entry-start" name="entry-sleep-start" type="time" value="21:30" />
+                  </section>
+                  <section id="sleep-input-end-container">
+                    <label class="entry-input-directions" for="entry-sleep-end">Ended Sleeping at: </label>
+                    <input id="sleep-entry-end" name="entry-sleep-end" type="time" value="07:00" />
+                  </section>
+                </section>
             </section>
+
             <section id="submit-entry-container" class="chart-feature swiper-slide" data-visibility="">
-              <span class="chart-title">Done!</label>
-                <span class="entry-input-directions">
-                  You did it! Press enter to save your entered data to your chart.
-                </span>
-                <span id="chart-entry-button">Submit</span>
+              <span class="chart-title">Done!</span>
+              <span class="entry-input-directions">
+                You did it! Press enter to save your entered data to your chart.
+              </span>
+              <span id="chart-entry-button">Submit</span>
             </section>
+
+
           </section>
 
           <!-- If we need pagination -->
