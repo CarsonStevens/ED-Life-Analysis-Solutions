@@ -235,7 +235,12 @@ nav {
   height: 100%;
   border: 1px solid #0c0e1c;
   border-radius: 0.3rem;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.container {
+  min-width: 575px;
 }
 
 .dashboard-title {
@@ -271,7 +276,7 @@ nav {
   border: 1px solid #0c0e1c;
   border-radius: 0.25rem;
   padding: 0.6rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -507,6 +512,7 @@ nav {
   -webkit-align-items: center;
   align-items: center;
   position: relative;
+  margin-top: 0;
 }
 
 #calorie-search-container {
@@ -528,6 +534,7 @@ nav {
   -webkit-align-items: center;
   align-items: center;
   position: relative;
+  margin-top: 0;
 }
 
 #calorie-entry-container,
@@ -611,8 +618,8 @@ nav {
 }
 
 #floating-feelings-wheel-container {
-  width: 80vw;
-  height: 80vw;
+  width: 80vh;
+  height: 80vh;
   position: absolute;
   right: 0;
   left: 0;
@@ -910,7 +917,7 @@ input[type=number] {
   border: 1px solid #0c0e1c;
   border-radius: 0.25rem;
   padding: 0.6rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -924,7 +931,7 @@ input[type=number] {
   border: 1px solid #0c0e1c;
   border-radius: 0.25rem;
   padding: 0.6rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -941,6 +948,7 @@ input[type=number] {
   display: none;
   text-align: center;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .setting {
@@ -950,8 +958,8 @@ input[type=number] {
   border-bottom: 3px solid rgba(255, 255, 255, 0.3);
   font-size: 0.8rem;
   text-align: left;
-  padding: 0rem 0.1rem 0.7rem;
-  margin: 1rem auto;
+  padding: 0rem 0.1rem -2rem ;
+  margin: 1rem auto 0;
   display: block;
 }
 
@@ -981,6 +989,7 @@ input[type=number] {
 }
 
 #account-settings-container {
+  min-width: 575px;
   position: relative;
   width: 95%;
   margin: 1rem 0.5rem 0;
@@ -1059,7 +1068,7 @@ input[type=number] {
 
 #account-settings-qr {
   grid-area: qr;
-  margin-top: 3.4rem;
+  padding: 1.4rem 1rem 1rem 0;
   width: 100%;
   min-width: 325px;
 }
@@ -1272,4 +1281,70 @@ input[type=number] {
   border-radius: 0.25rem;
   transition-duration: 0.3s;
   transform: scale(1, 1);
+}
+
+#settings-privacy {
+  margin-top: 0;
+  min-height: 8rem;
+  padding-bottom: 3rem;
+}
+
+#settings-privacy-container {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+
+
+.privacy-container {
+  width: 30%;
+  position: relative;
+}
+
+.privacy-container > .settings-subtitle {
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding: 0.25rem;
+  margin-bottom: 0.5rem auto;
+}
+
+.privacy-settings {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 5rem;
+  overflow-y: auto;
+  margin-top: 0.5rem;
+}
+
+.privacy-setting {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+  margin: 0.2rem auto;
+}
+
+.privacy-user {
+  width: 50%;
+  transform: scale(1,1);
+}
+
+.privacy-user:hover {
+  cursor: pointer;
+  transform: scale(1.1,1.1);
+  color: #1c1f3f;
+}
+
+.privacy-setting > .switch.toggle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 50%;
 }

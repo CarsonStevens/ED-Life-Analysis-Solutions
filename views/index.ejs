@@ -274,7 +274,7 @@
             <section id="submit-entry-container" class="chart-feature swiper-slide" data-visibility="">
               <span class="chart-title">Done!</span>
               <span class="entry-input-directions">
-                You did it! Press enter to save your entered data to your chart.
+                You did it! Press 'Submit' to save your entered data to your chart.
               </span>
               <span id="chart-entry-button">Submit</span>
             </section>
@@ -311,8 +311,8 @@
 
 
     <section id="settings-container" class="container">
-      <section class="setting">
 
+      <section class="setting">
         <section id="account-settings-container">
           <section id="account-settings-profile">
             <span class="setting-title">Account Settings</span>
@@ -424,24 +424,111 @@
         </section>
       </section>
 
-
       <section class="setting" id="settings-privacy">
         <span class="setting-title">Privacy Settings</span>
-        <section id="settings-privacy-medical">
-          <span class="settings-subtitle">Medical Team Members</span>
+        <section id="settings-privacy-container">
+
+          <section id="settings-privacy-medical" class="privacy-container">
+            <span class="settings-subtitle">Medical Team Members</span>
+            <section class="privacy-settings">
+              <section class="privacy-setting">
+                <span class="privacy-setting-user">Katie</span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input type="checkbox" class="switch__input medical-team-privacy-input privacy-input">
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+                <section class="individual-privacy-settings">
+                  <section class="individual-privacy-setting">
+                    <span class="individual-privacy-setting-title"></span>
+                    <section class="switch toggle">
+                      <label class="switch__label">
+                        <input type="checkbox" class="switch__input individual-privacy-input privacy-input">
+                        <span class="switch__design"></span>
+                      </label>
+                    </section>
+                  </section>
+                </section>
+              </section>
+              <section class="privacy-setting">
+                <span class="privacy-setting-user">Chloe</span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input type="checkbox" class="switch__input medical-team-privacy-input privacy-input">
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+              </section>
+            </section>
+          </section>
+
+          <section id="settings-privacy-family" class="privacy-container">
+            <span class="settings-subtitle">Family Members</span>
+            <section class="privacy-settings">
+              <section class="privacy-setting">
+                <span class="privacy-setting-user">Mike</span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input type="checkbox" class="switch__input family-privacy-input privacy-input">
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+              </section>
+              <section class="privacy-setting">
+                <span class="privacy-setting-user">Laura</span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input type="checkbox" class="switch__input family-privacy-input privacy-input">
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+              </section>
+            </section>
+          </section>
+
+          <section id="settings-privacy-other" class="privacy-container">
+            <span class="settings-subtitle">Other Support</span>
+            <section class="privacy-settings">
+              <section class="privacy-setting">
+                <span class="privacy-setting-user">Emmaline</span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input type="checkbox" class="switch__input other-privacy-input privacy-input">
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+              </section>
+              <section class="privacy-setting">
+                <span class="privacy-setting-user">Ryan</span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input type="checkbox" class="switch__input other-privacy-input privacy-input">
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+              </section>
+              <section class="privacy-setting">
+                <span class="privacy-setting-user">Lorinda</span>
+                <section class="switch toggle">
+                  <label class="switch__label">
+                    <input type="checkbox" class="switch__input other-privacy-input privacy-input">
+                    <span class="switch__design"></span>
+                  </label>
+                </section>
+              </section>
+            </section>
+          </section>
         </section>
-        <section id="settings-privacy-family">
-          <span class="settings-subtitle">Family Members</span>
-        </section>
-        <section id="settings-privacy-other">
-          <span class="settings-subtitle">Other Support</span>
-        </section>
+
+
       </section>
 
 
       <section class="setting">
         <span class="setting-title">Chart Settings</span>
       </section>
+
     </section>
 
   </main>
