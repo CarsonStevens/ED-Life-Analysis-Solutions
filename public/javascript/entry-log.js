@@ -100,9 +100,11 @@ $(document).ready(function() {
     });
   }
 
+
   setInputFilter(document.getElementById("weight-input-manual"), function(value) {
     return /^\d*\.?\d*$/.test(value); // Allow digits and '.' only, using a RegExp
   });
+
 
   $("#feelings-input-btn").click(function() {
     $("#feelings-list").css({'display': 'block'});
@@ -125,14 +127,6 @@ $(document).ready(function() {
     } else {
       alert("You didn't enter a feeling, silly!");
     }
-  });
-
-
-  $("#feelings-wheel").on("click", function() {
-    if($("#floating-feelings-wheel-container").css('display') == 'none') $("#floating-feelings-wheel-container").css({'display': 'flex'});
-  });
-  $("#floating-feelings-wheel-exit").on("click", function() {
-    $("#floating-feelings-wheel-container").css({"display": "none"});
   });
 
   let floatingFeelingsWheelTimer = null;
@@ -160,4 +154,5 @@ $(document).ready(function() {
     if($(this).val() == 'none') $("#exercise-entry-container > section:not(:first-of-type)").css({'display': 'none'});
     else $("#entry-exercise-info-container, #entry-exercise-duration-container").css({'display': 'grid'});
   });
+
 });
