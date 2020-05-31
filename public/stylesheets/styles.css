@@ -141,6 +141,7 @@ g[aria-labelledby="id-66-title"] {
 }
 
 body {
+  font-size: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: #1c1f3f;
@@ -639,11 +640,14 @@ nav {
 #floating-feelings-wheel {
   position: relative;
   display: block;
-  margin: auto;
-  --floating--felings-wheel-margins: 0.75rem;
+  margin: 0;
+  width: 80vh;
+  height: 80vh;
+
+  /* --floating--felings-wheel-margins: 0.75rem;
   width: calc(100% - calc(var(--floating--felings-wheel-margins) * 2));
   height: auto;
-  margin: var(--floating--felings-wheel-margins);
+  margin: var(--floating--felings-wheel-margins); */
 }
 
 .entry-container {
@@ -1347,4 +1351,8 @@ input[type=number] {
   top: 0;
   bottom: 0;
   right: 50%;
+}
+
+#floating-feelings-wheel-container {
+  display: block;
 }
